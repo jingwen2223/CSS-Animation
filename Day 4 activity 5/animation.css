@@ -1,10 +1,12 @@
 .container{
-  border:solid red;
+  border: ridge 30px lightblue;
   width: 700px;
   height:500px;
   margin-right: auto;
   margin-left: auto;
   position: relative;
+  overflow: hidden;
+
 }
 .backImg{
   width: 100%;
@@ -16,9 +18,78 @@
   bottom: 0px;
   right: 0px;
   animation-name: slideCar;
-  animation-duration: 3s;
+  animation-duration: 5s;
+  animation-iteration-count: 2;
+  animation-delay:2s;
+  animation-fill-mode: forwards;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease-in-out;
 }
 @keyframes slideCar {
   from{transform:translateX(-700px);}
-    to{transform:translateX(200px);}
+    to{transform:translateX(-10px);}
+}
+.cloud1, .cloud2, .cloud3{
+    position:absolute;
+    animation-name: cloudsMove;
+    animation-iteration-count: infinite;
+}
+.cloud1{
+  width: 100px;
+  top:0px;
+  left:-100px;
+  animation-duration: 5s;
+}
+.cloud2{
+  width: 150px;
+  top:20px;
+  left:-200px;
+  animation-duration: 8s;
+
+}
+.cloud3{
+  width: 220px;
+  top:0px;
+  left:-150px;
+  animation-duration: 6s;
+
+}
+@keyframes cloudsMove {
+
+  0%{  transform: translateX(0px);opacity: 0.9;}
+  100%{transform: translateX(800px);opacity: 0.5;}
+
+}
+.sun{
+  position: absolute;
+  top:0px;
+  left:-10px;
+  width: 150px;
+  animation: rotationFlashing 30s forwards;
+
+}
+@keyframes rotationFlashing {
+  0%{transform: rotate(45deg); opacity: 0.9;}
+  25%{opacity: 0.5;}
+  50%{transform: rotate(-100deg);}
+  75%{opacity: 0.8;}
+  100%{transform: rotate(360deg);opacity: 0.3;left: 700px}
+
+}
+.zoomSun{
+  position: absolute;
+  width: 200px;
+  left:200px;
+  top: 200px;
+  animation: zoom 8s forwards;
+}
+@keyframes zoom {
+  0&{transform: scale(0.3);}
+  30%{transform: rotate(180deg);}
+  50%{transform: scale(2);}
+  85%{transform: rotate(-180deg);}
+  100%{transform: scale(240deg) scale(0);}
+
+
+
 }
